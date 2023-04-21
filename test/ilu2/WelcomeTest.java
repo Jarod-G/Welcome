@@ -10,7 +10,7 @@ class WelcomeTest {
 	Welcome wel;
 	
 	@BeforeEach
-	void setup() {
+	void setup() throws Exception{
 		wel = new Welcome();
 	}
 	
@@ -23,6 +23,7 @@ class WelcomeTest {
 	void test_EX2() {
 		assertEquals("Hello, my friend", wel.welcome("    "));
 		assertEquals("Hello, my friend", wel.welcome(""));
+		assertEquals("Hello, my friend", wel.welcome(null));
 	}
 
 }
