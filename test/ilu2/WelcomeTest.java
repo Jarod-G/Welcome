@@ -15,8 +15,14 @@ class WelcomeTest {
 	}
 	
 	@Test
-	void test_welcomeBob() {
+	void test_EX1() {
 		assertEquals("Hello, Bob", wel.welcome("bob"));
+	}
+	
+	@Test
+	void test_EX2() {
+		assertEquals("Hello, my friend", wel.welcome("    "));
+		assertEquals("Hello, my friend", wel.welcome(""));
 	}
 
 }
