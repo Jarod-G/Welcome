@@ -28,8 +28,8 @@ class WelcomeTest {
 	
 	@Test
 	void test_EX3() {
-		assertEquals("HELLO, JERRY", wel.welcome("JERRY"));
-		assertEquals("HELLO, JAMES", wel.welcome("JAMES"));
+		assertEquals("HELLO, JERRY !", wel.welcome("JERRY"));
+		assertEquals("HELLO, JAMES !", wel.welcome("JAMES"));
 		assertEquals("Hello, Kevin", wel.welcome("KEVIn"));
 	}
 

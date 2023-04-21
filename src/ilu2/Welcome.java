@@ -7,7 +7,7 @@ public class Welcome {
 			return "Hello, my friend";
 		}
 		if(input.equals(input.toUpperCase())) {
-			return "HELLO, " + input.toUpperCase();
+			return "HELLO, " + input.toUpperCase() + " !";
 		}
 		input = input.substring(0,1).toUpperCase() + input.substring(1).toLowerCase();
 		return "Hello, " + input;
