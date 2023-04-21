@@ -6,7 +6,10 @@ public class Welcome {
 		if(input == null || input.trim().length() == 0 ) {
 			return "Hello, my friend";
 		}
-		input = input.substring(0,1).toUpperCase() + input.substring(1);
+		if(input.equals(input.toUpperCase())) {
+			return "HELLO, " + input.toUpperCase();
+		}
+		input = input.substring(0,1).toUpperCase() + input.substring(1).toLowerCase();
 		return "Hello, " + input;
 	}
 }
