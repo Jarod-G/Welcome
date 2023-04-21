@@ -15,8 +15,8 @@ class WelcomeTest {
 	}
 	
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void test_welcomeBob() {
+		assertEquals("Hello, Bob", wel.welcome("bob"));
 	}
 
 }
