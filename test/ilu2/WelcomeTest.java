@@ -40,5 +40,10 @@ class WelcomeTest {
 		assertNotEquals("Hello, James", wel.welcome("james,kevin"));
 	}
 	
-	
+	@Test
+	void test_EX5() {
+		assertEquals("Hello, Amy, Bob, Jerry", wel.welcome("Amy, bob,jerry"));
+		assertEquals("Hello, Kevin, James, Théo", wel.welcome("kevin,james,théo"));
+		assertNotEquals("Hello, Kevin, James", wel.welcome("kevin,james,théo"));
+	}
 }
