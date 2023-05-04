@@ -13,10 +13,11 @@ public class Welcome {
 		String[] noms = input.split(",");
 		int upperNumber = numberUpper(noms);
 		String[] nomsUpper = splitUpper(noms,upperNumber), nomsLower = splitLower(noms,upperNumber);
+
 		if(nomsUpper.length == 0){
 			return nomsLowerCase(nomsLower);
 		}
-		return nomsLowerCase(nomsLower) + nomsUpperCase(nomsUpper);
+		return nomsLowerCase(nomsLower) + "." + nomsUpperCase(nomsUpper) + " !";
 	}
 	
 	
@@ -30,7 +31,6 @@ public class Welcome {
 					sb.append(", ").append(noms[i].substring(0, 1).toUpperCase()).append(noms[i].substring(1).toLowerCase());
 				}
 		}
-		sb.append(".");
 		return sb.toString();
 	}
 	
@@ -45,7 +45,6 @@ public class Welcome {
 					sb.append(", " + noms[i].toUpperCase());
 				}
 		}
-		sb.append(" !");
 		return sb.toString();
 	}
 	
