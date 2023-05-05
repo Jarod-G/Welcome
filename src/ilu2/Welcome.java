@@ -13,7 +13,6 @@ public class Welcome {
 		if(nomsLower.length == 0) {
 			return nomsUpperCase(nomsUpper) + " !";
 		}
-		
 		if(nomsUpper.length == 0){
 			return nomsLowerCase(nomsLower);
 		}
@@ -28,6 +27,10 @@ public class Welcome {
 		StringBuilder sb = new StringBuilder("Hello");
 		for(int i = 0; i < noms.length; i++) {
 				noms[i] = noms[i].trim();
+				if(noms[i].contains("yoda")) {
+					sb = yodaPresentLower(noms);
+					break;
+				}
 				if(i == noms.length-1 && noms.length > 1) {
 					sb.append(" and " + noms[i].substring(0, 1).toUpperCase()).append(noms[i].substring(1).toLowerCase());
 				}else {
@@ -35,6 +38,21 @@ public class Welcome {
 				}
 		}
 		return sb.toString();
+	}
+	
+	
+	private static StringBuilder yodaPresentLower(String[] noms) {
+		StringBuilder sb = new StringBuilder();
+		for(int i = 0; i < noms.length; i++) {
+				noms[i] = noms[i].trim();
+				if(i == noms.length-1 && noms.length > 1) {
+					sb.append("and " + noms[i].substring(0, 1).toUpperCase()).append(noms[i].substring(1).toLowerCase()).append(", ");
+				}else {
+					sb.append(noms[i].substring(0, 1).toUpperCase()).append(noms[i].substring(1).toLowerCase()).append(", ");
+				}
+		}
+		sb.append("Hello");
+		return sb;
 	}
 	
 	
@@ -47,6 +65,10 @@ public class Welcome {
 		}
 		for(int i = 0; i < noms.length; i++) {
 				noms[i] = noms[i].trim();
+				if(noms[i].contains("YODA")) {
+					sb = yodaPresentUpper(noms);
+					break;
+				}
 				if(i == noms.length-1 && noms.length > 1) {
 					sb.append(" AND " + noms[i]);
 				}else {
@@ -54,6 +76,24 @@ public class Welcome {
 				}
 		}
 		return sb.toString();
+	}
+	
+	
+	private static StringBuilder yodaPresentUpper(String[] noms) {
+		StringBuilder sb = new StringBuilder();
+		if(noms.length > 1) {
+			sb.append(" AND ");
+		}
+		for(int i = 0; i < noms.length; i++) {
+				noms[i] = noms[i].trim();
+				if(i == noms.length-1 && noms.length > 1) {
+					sb.append(" AND " + noms[i]);
+				}else {
+					sb.append(noms[i]);
+				}
+		}
+		sb.append(", HELLO");
+		return sb;
 	}
 	
 	
